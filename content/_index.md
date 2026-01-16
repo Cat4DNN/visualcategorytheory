@@ -1,51 +1,75 @@
 +++
-title = "Modern Documentation Theme"
+title = "Handbook of Computational Finance"
 
 
 # The homepage contents
 [extra]
-lead = '<b>AdiDoks</b> is a modern documentation theme, which is a port of the Hugo theme <a href="https://github.com/h-enk/">Doks</a> for Zola.'
-url = "/docs/getting-started/introduction/"
-url_button = "Get started"
-repo_version = "GitHub v0.1.0"
-repo_license = "Open-source MIT License."
-repo_url = "https://github.com/aaranxu/adidoks"
+lead = '<b>Handbook of Computational Finance:</b> Category-Theoretical & AI-driven Approaches. A rigorous exploration of modern quantitative methods combining abstract mathematics with practical machine learning implementations.'
+url = "/chapters/part-1/introduction/"
+url_button = "Start Reading"
+repo_version = "First Edition"
+repo_license = "Academic & Professional"
+repo_url = "https://github.com/sergeoumbi/compfinance-book"
 
 # Menu items
 [[extra.menu.main]]
-name = "Docs"
-section = "docs"
-url = "/docs/getting-started/introduction/"
+name = "About"
+section = "about"
+url = "/about/"
 weight = 10
 
 [[extra.menu.main]]
-name = "Blog"
-section = "blog"
-url = "/blog/"
+name = "Chapters"
+section = "chapters"
+url = "/chapters/"
 weight = 20
 
-[[extra.list]]
-title = "Security aware"
-content = 'Get A+ scores on <a href="https://observatory.mozilla.org/analyze/adidoks.org">Mozilla Observatory</a> out of the box. Easily change the default Security Headers to suit your needs.'
+[[extra.menu.main]]
+name = "Videos"
+section = "videos"
+url = "/videos/"
+weight = 30
+
+[[extra.menu.main]]
+name = "Gallery"
+section = "gallery"
+url = "/gallery/"
+weight = 40
+
+[[extra.menu.main]]
+name = "Author"
+section = "author"
+url = "/author/"
+weight = 50
+
+[[extra.menu.main]]
+name = "Resources"
+section = "resources"
+url = "/resources/"
+weight = 60
 
 [[extra.list]]
-title = "Fast by default ⚡️"
-content = 'Get 100 scores on <a href="https://googlechrome.github.io/lighthouse/viewer/?gist=7731347bb8ce999eff7428a8e763b637">Google Lighthouse</a> by default. Doks removes unused css, prefetches links, and lazy loads images.'
+title = "Category Theory Foundations"
+content = 'Master the mathematical structures underlying modern finance: functors, natural transformations, and monads applied to derivative pricing and risk management.'
 
 [[extra.list]]
-title = "SEO-ready"
-content = "Use sensible defaults for structured data, open graph, and Twitter cards. Or easily change the SEO settings to your liking."
+title = "AI-Driven Trading Strategies"
+content = 'Implement cutting-edge machine learning models for alpha generation, including transformers, reinforcement learning, and neural differential equations.'
 
 [[extra.list]]
-title = "Full text search"
-content = "Search your Doks site with FlexSearch. Easily customize index settings and search options to your liking."
+title = "Mathematical Rigor"
+content = 'Every concept backed by formal proofs and type-safe implementations. From measure theory to stochastic calculus with categorical semantics.'
 
 [[extra.list]]
-title = "Page layouts"
-content = "Build pages with a landing page, blog, or documentation layout. Add custom sections and components to suit your needs."
+title = "Executable Examples"
+content = 'Full code implementations in Python, Haskell, and Julia. All models can be run directly from the companion repository.'
 
 [[extra.list]]
-title = "Dark mode"
-content = "Switch to a low-light UI with the click of a button. Change colors with variables to match your branding."
+title = "Risk & Portfolio Theory"
+content = 'Modern portfolio optimization through the lens of category theory. Coherent risk measures, convex optimization, and functorial approaches to hedging.'
+
+[[extra.list]]
+title = "Production-Ready Code"
+content = 'Bridge theory and practice with deployable trading systems. Real-time data pipelines, backtesting frameworks, and performance optimization.'
 
 +++

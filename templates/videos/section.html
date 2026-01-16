@@ -1,0 +1,74 @@
+{% extends "section.html" %}
+
+{% block header %}
+  {% set current_section = "videos" %}
+  {{ macros_header::header(current_section=current_section)}}
+{% endblock header %}
+
+{% block content %}
+<div class="wrap container" role="document">
+  <div class="content">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-lg-10 col-xxl-10">
+        <article class="videos-section">
+          <div class="page-header text-center mb-5">
+            <h1>{{ section.title }}</h1>
+            {% if section.description %}
+              <p class="lead text-muted">{{ section.description }}</p>
+            {% endif %}
+          </div>
+
+          {{ section.content | safe }}
+
+          <div class="video-grid">
+            <div class="row">
+              {% for page in section.pages %}
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="video-card card h-100">
+                  {% if page.extra.thumbnail %}
+                  <div class="video-thumbnail">
+                    <a href="{{ page.permalink }}">
+                      <img src="{{ page.extra.thumbnail }}" alt="{{ page.title }}" class="card-img-top">
+                      <div class="play-overlay">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                      </div>
+                    </a>
+                  </div>
+                  {% else %}
+                  <div class="video-thumbnail placeholder-thumbnail">
+                    <a href="{{ page.permalink }}">
+                      <div class="placeholder-bg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                      </div>
+                    </a>
+                  </div>
+                  {% endif %}
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <a href="{{ page.permalink }}">{{ page.title }}</a>
+                    </h5>
+                    {% if page.description %}
+                    <p class="card-text text-muted small">{{ page.description | truncate(length=100) }}</p>
+                    {% endif %}
+                    {% if page.extra.duration %}
+                    <span class="badge bg-secondary">{{ page.extra.duration }}</span>
+                    {% endif %}
+                    {% if page.extra.level %}
+                    <span class="badge bg-primary">{{ page.extra.level }}</span>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

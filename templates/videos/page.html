@@ -1,0 +1,95 @@
+{% extends "page.html" %}
+
+{% block header %}
+  {% set current_section = "videos" %}
+  {{ macros_header::header(current_section=current_section)}}
+{% endblock header %}
+
+{% block content %}
+<div class="wrap container" role="document">
+  <div class="content">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-lg-10 col-xxl-8">
+        <article class="video-page">
+          <div class="page-header mb-4">
+            <h1>{{ page.title }}</h1>
+            {% if page.description %}
+              <p class="lead text-muted">{{ page.description }}</p>
+            {% endif %}
+            <div class="video-meta mt-3">
+              {% if page.extra.duration %}
+              <span class="badge bg-secondary me-2">{{ page.extra.duration }}</span>
+              {% endif %}
+              {% if page.extra.level %}
+              <span class="badge bg-primary me-2">{{ page.extra.level }}</span>
+              {% endif %}
+              {% if page.extra.chapter %}
+              <span class="badge bg-info">Chapter {{ page.extra.chapter }}</span>
+              {% endif %}
+            </div>
+          </div>
+
+          {% if page.extra.youtube_id %}
+          <div class="video-embed mb-4">
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://www.youtube.com/embed/{{ page.extra.youtube_id }}"
+                title="{{ page.title }}"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+          {% elif page.extra.vimeo_id %}
+          <div class="video-embed mb-4">
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://player.vimeo.com/video/{{ page.extra.vimeo_id }}"
+                title="{{ page.title }}"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+          {% elif page.extra.video_url %}
+          <div class="video-embed mb-4">
+            <div class="ratio ratio-16x9">
+              <video controls>
+                <source src="{{ page.extra.video_url }}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+          {% endif %}
+
+          <div class="video-content">
+            {{ page.content | safe }}
+          </div>
+
+          {% if page.extra.resources %}
+          <div class="video-resources mt-5">
+            <h3>Related Resources</h3>
+            <ul class="list-unstyled">
+              {% for resource in page.extra.resources %}
+              <li class="mb-2">
+                <a href="{{ resource.url }}">{{ resource.title }}</a>
+                {% if resource.type %}
+                <span class="badge bg-secondary ms-2">{{ resource.type }}</span>
+                {% endif %}
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+
+          <div class="video-navigation mt-5 pt-4 border-top">
+            <a href="/videos/" class="btn btn-outline-primary">&larr; All Videos</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

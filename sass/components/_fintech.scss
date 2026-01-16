@@ -1,0 +1,387 @@
+// Fintech Styling Component
+// Provides glow effects, trading terminal aesthetics, and book-specific styling
+
+// ============================================
+// Video Section Styling
+// ============================================
+
+.video-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: $gray-100;
+  border: 1px solid $gray-200;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .video-thumbnail {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .play-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+
+      svg {
+        color: white;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+      }
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.05);
+      }
+
+      .play-overlay {
+        opacity: 1;
+      }
+    }
+  }
+
+  .placeholder-thumbnail {
+    .placeholder-bg {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, $fintech-navy 0%, $fintech-card 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        color: $fintech-blue;
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.video-embed {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+// ============================================
+// Gallery Section Styling
+// ============================================
+
+.gallery-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: $gray-100;
+  border: 1px solid $gray-200;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .gallery-image-wrapper {
+    position: relative;
+    overflow: hidden;
+
+    .gallery-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+
+      svg {
+        color: white;
+      }
+    }
+
+    &:hover {
+      .gallery-image {
+        transform: scale(1.1);
+      }
+
+      .gallery-overlay {
+        opacity: 1;
+      }
+    }
+  }
+
+  .gallery-caption {
+    padding: 1rem;
+
+    h6 {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+// ============================================
+// Fintech Glow Effects
+// ============================================
+
+.fintech-glow {
+  box-shadow: 0 0 20px rgba($fintech-blue, 0.3);
+}
+
+.fintech-glow-green {
+  box-shadow: 0 0 20px rgba($fintech-green, 0.3);
+}
+
+.fintech-glow-red {
+  box-shadow: 0 0 20px rgba($fintech-red, 0.3);
+}
+
+// Button glow on hover
+.btn-primary {
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 20px rgba($primary, 0.4);
+  }
+}
+
+// ============================================
+// Code Block Enhancements
+// ============================================
+
+pre {
+  border-radius: 8px;
+  border: 1px solid $gray-200;
+}
+
+code {
+  font-size: 0.875em;
+}
+
+// ============================================
+// Mathematical Content
+// ============================================
+
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem 0;
+}
+
+// ============================================
+// Card Enhancements
+// ============================================
+
+.card {
+  border-radius: 12px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// ============================================
+// Homepage Hero Enhancement
+// ============================================
+
+.home {
+  .section-hero {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        135deg,
+        rgba($fintech-blue, 0.03) 0%,
+        transparent 50%,
+        rgba($fintech-purple, 0.03) 100%
+      );
+      pointer-events: none;
+    }
+  }
+}
+
+// ============================================
+// Table of Contents Enhancement
+// ============================================
+
+.docs-toc {
+  .nav-link {
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: $primary;
+      padding-left: 0.5rem;
+    }
+
+    &.active {
+      color: $primary;
+      font-weight: 600;
+      border-left: 2px solid $primary;
+      padding-left: calc(0.5rem - 2px);
+    }
+  }
+}
+
+// ============================================
+// Responsive Adjustments
+// ============================================
+
+@include media-breakpoint-down(md) {
+  .video-card .video-thumbnail img,
+  .video-card .placeholder-bg {
+    height: 150px;
+  }
+
+  .gallery-card .gallery-image {
+    height: 150px;
+  }
+}
+
+// ============================================
+// Dark Mode Enhancements (in addition to _dark.scss)
+// ============================================
+
+body.dark {
+  .video-card,
+  .gallery-card {
+    background: $fintech-card;
+    border-color: lighten($fintech-navy, 10%);
+
+    &:hover {
+      border-color: $fintech-blue;
+      box-shadow: 0 0 30px rgba($fintech-blue, 0.2);
+    }
+  }
+
+  .placeholder-bg {
+    background: linear-gradient(135deg, $fintech-navy 0%, lighten($fintech-navy, 5%) 100%);
+  }
+
+  pre {
+    border-color: lighten($fintech-navy, 10%);
+  }
+
+  .card {
+    &:hover {
+      box-shadow: 0 0 30px rgba($fintech-blue, 0.15);
+    }
+  }
+
+  .home .section-hero::before {
+    background: linear-gradient(
+      135deg,
+      rgba($fintech-blue, 0.08) 0%,
+      transparent 50%,
+      rgba($fintech-purple, 0.08) 100%
+    );
+  }
+}
+
+// ============================================
+// Trading-specific Colors
+// ============================================
+
+.price-up, .bullish {
+  color: $fintech-green;
+}
+
+.price-down, .bearish {
+  color: $fintech-red;
+}
+
+.price-neutral {
+  color: $gray-500;
+}
+
+// ============================================
+// Author Page Styling
+// ============================================
+
+.author-page {
+  .author-photo {
+    img {
+      border-radius: 50%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+body.dark .author-page .author-photo div {
+  box-shadow: 0 0 30px rgba($fintech-blue, 0.3);
+}
+
+// ============================================
+// Badge Enhancements
+// ============================================
+
+.badge {
+  font-weight: 500;
+  padding: 0.4em 0.8em;
+  border-radius: 6px;
+}
+
+.badge.bg-primary {
+  background-color: $fintech-blue !important;
+}
+
+.badge.bg-secondary {
+  background-color: $gray-600 !important;
+}
+
+.badge.bg-success {
+  background-color: $fintech-green !important;
+}
+
+.badge.bg-danger {
+  background-color: $fintech-red !important;
+}
+
+// ============================================
+// Animation Utilities
+// ============================================
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba($fintech-blue, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba($fintech-blue, 0.5);
+  }
+}
+
+.animate-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
