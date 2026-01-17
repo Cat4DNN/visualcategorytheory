@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block seo %}
+  {{ super() }}
+  <title>{{ taxonomy.name | title }} {{ title_separator | default(value="|") }} {{ config.title }}</title>
+{% endblock seo %}
+
+{% block content %}
+<section class="section container-fluid mt-n3 pb-3">
+  <div class="row justify-content-center">
+    <div class="col-lg-12 text-center">
+      <h1 class="mt-0">{{ taxonomy.name | title }}</h1>
+    </div>
+    <div class="col-lg-9 col-xl-8 text-center">
+      <p class="lead">Browse all {{ taxonomy.name }}.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-sm">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 col-xl-8">
+        <ul class="list-unstyled">
+          {% for term in terms %}
+          <li class="mb-2">
+            <a href="{{ term.permalink }}" class="h5">{{ term.name }}</a>
+            <span class="text-muted">({{ term.pages | length }})</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}
