@@ -1,3 +1,331 @@
-// Custom styles for Handbook of Computational Finance
-// Import fintech-specific styling
-@import "components/fintech";
+// Custom styles for Visual Category Theory
+// A captivating, visual journey through categorical abstractions
+
+// Import category theory visual styling
+@import "components/category-theory";
+
+// ─────────────────────────────────────────────────────────────────
+// HOMEPAGE HERO ENHANCEMENTS
+// ─────────────────────────────────────────────────────────────────
+
+.hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #312e81 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.1) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    color: #cbd5e1;
+    max-width: 700px;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    .lead {
+      font-size: 1rem;
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// FEATURE CARDS ON HOMEPAGE
+// ─────────────────────────────────────────────────────────────────
+
+.features {
+  .feature-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border-color: #3b82f6;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: #1e293b;
+    }
+
+    p {
+      color: #64748b;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background: #1e293b;
+      border-color: #334155;
+
+      &:hover {
+        border-color: #60a5fa;
+      }
+
+      h3 {
+        color: #f1f5f9;
+      }
+
+      p {
+        color: #94a3b8;
+      }
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// DOCUMENTATION SIDEBAR ENHANCEMENTS
+// ─────────────────────────────────────────────────────────────────
+
+.docs-sidebar {
+  .sidebar-nav {
+    a {
+      display: block;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      color: #475569;
+
+      &:hover {
+        background: #f1f5f9;
+        color: #1e293b;
+      }
+
+      &.active {
+        background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+        color: #1e40af;
+        font-weight: 600;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        color: #94a3b8;
+
+        &:hover {
+          background: #334155;
+          color: #f1f5f9;
+        }
+
+        &.active {
+          background: linear-gradient(135deg, #1e3a5f 0%, #312e81 100%);
+          color: #93c5fd;
+        }
+      }
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// BREADCRUMB STYLING
+// ─────────────────────────────────────────────────────────────────
+
+.breadcrumb {
+  padding: 0.75rem 0;
+  font-size: 0.875rem;
+
+  a {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #3b82f6;
+    }
+  }
+
+  .separator {
+    margin: 0 0.5rem;
+    color: #cbd5e1;
+  }
+
+  .current {
+    color: #1e293b;
+    font-weight: 500;
+
+    @media (prefers-color-scheme: dark) {
+      color: #f1f5f9;
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// SCROLL ANIMATIONS TRIGGERS
+// ─────────────────────────────────────────────────────────────────
+
+[data-animate] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.animated {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-animate="fade-left"] {
+  transform: translateX(-30px);
+
+  &.animated {
+    transform: translateX(0);
+  }
+}
+
+[data-animate="fade-right"] {
+  transform: translateX(30px);
+
+  &.animated {
+    transform: translateX(0);
+  }
+}
+
+[data-animate="scale-up"] {
+  transform: scale(0.9);
+
+  &.animated {
+    transform: scale(1);
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// NAVIGATION HEADER
+// ─────────────────────────────────────────────────────────────────
+
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e2e8f0;
+
+  .nav-link {
+    font-weight: 500;
+    color: #475569;
+    transition: color 0.2s ease;
+
+    &:hover, &.active {
+      color: #2563eb;
+    }
+  }
+
+  .brand {
+    font-weight: 700;
+    font-size: 1.25rem;
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background: rgba(15, 23, 42, 0.95);
+    border-bottom-color: #334155;
+
+    .nav-link {
+      color: #94a3b8;
+
+      &:hover, &.active {
+        color: #60a5fa;
+      }
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// FOOTER STYLING
+// ─────────────────────────────────────────────────────────────────
+
+footer {
+  background: #0f172a;
+  color: #94a3b8;
+  padding: 3rem 0;
+
+  a {
+    color: #cbd5e1;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #3b82f6;
+    }
+  }
+
+  .footer-brand {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #f1f5f9;
+  }
+
+  .footer-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 300px;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// CUSTOM SCROLLBAR
+// ─────────────────────────────────────────────────────────────────
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6 0%, #7c3aed 100%);
+  border-radius: 5px;
+
+  &:hover {
+    background: linear-gradient(180deg, #2563eb 0%, #6d28d9 100%);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: #1e293b;
+  }
+}

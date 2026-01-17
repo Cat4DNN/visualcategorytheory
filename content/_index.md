@@ -1,15 +1,15 @@
 +++
-title = "The Recursion Schemes Compendium"
+title = "Visual Category Theory"
 
 
 # The homepage contents
 [extra]
-lead = '<b>The Recursion Schemes Compendium:</b> Master the art of structured recursion. From catamorphisms to chronomorphisms, discover how to express complex recursive patterns through elegant, composable abstractions rooted in category theory.'
-url = "/schemes/foundations/introduction/"
-url_button = "Begin Learning"
-repo_version = "Complete Edition"
+lead = '<b>Visual Category Theory:</b> An intuitive, beautifully illustrated journey through the mathematics of structure and composition. Discover the elegant patterns that unify programming, mathematics, and logic through interactive diagrams, animations, and crystal-clear explanations.'
+url = "/concepts/foundations/introduction/"
+url_button = "Begin Your Journey"
+repo_version = "First Edition"
 repo_license = "Open Source"
-repo_url = "https://github.com/Cat4DNN/recursionschemes"
+repo_url = "https://github.com/Cat4DNN/visual-category-theory"
 author = "Serge Youmbi"
 
 # Menu items
@@ -20,9 +20,9 @@ url = "/about/"
 weight = 10
 
 [[extra.menu.main]]
-name = "Schemes"
-section = "schemes"
-url = "/schemes/"
+name = "Concepts"
+section = "concepts"
+url = "/concepts/"
 weight = 20
 
 [[extra.menu.main]]
@@ -50,27 +50,27 @@ url = "/resources/"
 weight = 60
 
 [[extra.list]]
-title = "Folds & Unfolds"
-content = 'Master catamorphisms (folds) and anamorphisms (unfolds) - the fundamental building blocks that capture the essence of consuming and producing recursive data structures.'
+title = "Objects & Morphisms"
+content = 'Begin with the fundamental building blocks: objects as abstract entities and morphisms (arrows) as the relationships between them. Visualise composition and identity through animated diagrams.'
 
 [[extra.list]]
-title = "Refolds & Compositions"
-content = 'Combine folds and unfolds into powerful hylomorphisms. Learn how these compositions enable efficient algorithms by fusing production and consumption into a single pass.'
+title = "Functors & Mappings"
+content = 'Explore structure-preserving maps between categories. See how functors capture the essence of transformation whilst maintaining compositional integrity—the key to generic programming.'
 
 [[extra.list]]
-title = "History & Future"
-content = 'Explore histomorphisms and futumorphisms - schemes that provide access to previously computed values or allow generation of multiple layers at once.'
+title = "Natural Transformations"
+content = 'Witness the elegant dance of morphisms between functors. Interactive visualisations reveal how natural transformations provide systematic ways to convert between different computational contexts.'
 
 [[extra.list]]
-title = "Categorical Foundations"
-content = 'Understand the deep connection to F-algebras, F-coalgebras, initial algebras, and terminal coalgebras. See how category theory provides the theoretical backbone.'
+title = "Universal Properties"
+content = 'Discover the power of defining things by what they do, not what they are. Products, coproducts, limits, and colimits emerge naturally from universal constructions.'
 
 [[extra.list]]
-title = "Practical Haskell"
-content = 'Every scheme comes with complete Haskell implementations using the recursion-schemes library. Learn to apply these patterns in real functional codebases.'
+title = "Monads & Kleisli"
+content = 'Unravel the mystery of monads through intuitive diagrams. From computational effects to the Kleisli category, see why monads are "just monoids in the category of endofunctors".'
 
 [[extra.list]]
-title = "Advanced Patterns"
-content = 'Go beyond the basics with zygomorphisms, mutumorphisms, dynamorphisms, and chronomorphisms. Master the full zoo of recursion schemes.'
+title = "Adjunctions & Duality"
+content = 'Experience the profound symmetry at the heart of category theory. Adjoint functors reveal deep connections between seemingly unrelated mathematical structures.'
 
 +++
