@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://cat4dnn.github.io/visual-category-theory"
+base_url = "https://cat4dnn.github.io/visualcategorytheory"
 title = "Visual Category Theory"
 description = "An intuitive, visual journey through category theory - from objects and morphisms to monads and adjunctions. Interactive diagrams, GSAP animations, and practical examples for programmers, mathematicians, and curious minds."
 
