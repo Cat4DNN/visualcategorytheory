@@ -1,87 +1,154 @@
 +++
-title = "Gallery"
-description = "Mathematical visualizations and formulas from the Handbook of Computational Finance."
+title = "Formula Gallery"
+description = "Mathematical definitions and type signatures for recursion schemes."
 template = "gallery/section.html"
 
 [extra]
-categories = ["Category Theory", "Stochastic Calculus", "Machine Learning", "Risk"]
+categories = ["Foundations", "Basic Schemes", "Extended Schemes", "History-Aware", "Advanced"]
 
 [[extra.gallery_items]]
-title = "Functor Definition"
-description = "A functor F maps objects and morphisms between categories"
-katex = "F: \\mathcal{C} \\to \\mathcal{D}"
-category = "Category Theory"
+title = "F-Algebra"
+description = "An algebra for functor F with carrier A"
+katex = "\\alpha : F\\,A \\to A"
+category = "Foundations"
 
 [[extra.gallery_items]]
-title = "Natural Transformation"
-description = "A natural transformation between functors F and G"
-katex = "\\eta: F \\Rightarrow G"
-category = "Category Theory"
+title = "F-Coalgebra"
+description = "A coalgebra for functor F with carrier A"
+katex = "\\psi : A \\to F\\,A"
+category = "Foundations"
 
 [[extra.gallery_items]]
-title = "Monad Structure"
-description = "The monad triple with unit and multiplication"
-katex = "(T, \\eta, \\mu)"
-category = "Category Theory"
+title = "Fixed Point (Fix)"
+description = "The recursive fixed point type"
+katex = "\\text{Fix } F = F\\,(\\text{Fix } F)"
+category = "Foundations"
 
 [[extra.gallery_items]]
-title = "Black-Scholes PDE"
-description = "The fundamental equation for option pricing"
-katex = "\\frac{\\partial V}{\\partial t} + \\frac{1}{2}\\sigma^2 S^2 \\frac{\\partial^2 V}{\\partial S^2} + rS\\frac{\\partial V}{\\partial S} - rV = 0"
-category = "Stochastic Calculus"
+title = "Initial Algebra (μF)"
+description = "The least fixed point of functor F"
+katex = "\\mu F \\cong F\\,(\\mu F)"
+category = "Foundations"
 
 [[extra.gallery_items]]
-title = "Itô's Lemma"
-description = "The chain rule for stochastic calculus"
-katex = "df = \\frac{\\partial f}{\\partial t}dt + \\frac{\\partial f}{\\partial X}dX + \\frac{1}{2}\\frac{\\partial^2 f}{\\partial X^2}(dX)^2"
-category = "Stochastic Calculus"
+title = "Terminal Coalgebra (νF)"
+description = "The greatest fixed point of functor F"
+katex = "\\nu F \\cong F\\,(\\nu F)"
+category = "Foundations"
 
 [[extra.gallery_items]]
-title = "Geometric Brownian Motion"
-description = "The standard model for stock price dynamics"
-katex = "dS_t = \\mu S_t dt + \\sigma S_t dW_t"
-category = "Stochastic Calculus"
+title = "Catamorphism"
+description = "The unique fold from initial algebra"
+katex = "\\llbracket \\phi \\rrbracket : \\mu F \\to A"
+category = "Basic Schemes"
 
 [[extra.gallery_items]]
-title = "Neural Network Layer"
-description = "Forward pass through a neural network layer"
-katex = "h^{(l)} = \\sigma(W^{(l)} h^{(l-1)} + b^{(l)})"
-category = "Machine Learning"
+title = "Cata Definition"
+description = "Catamorphism unfolds its definition"
+katex = "\\text{cata} \\; \\phi = \\phi \\circ F\\,(\\text{cata} \\; \\phi) \\circ \\text{out}"
+category = "Basic Schemes"
 
 [[extra.gallery_items]]
-title = "Attention Mechanism"
-description = "Scaled dot-product attention in transformers"
-katex = "\\text{Attention}(Q,K,V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V"
-category = "Machine Learning"
+title = "Anamorphism"
+description = "The unique unfold to terminal coalgebra"
+katex = "[(\\psi)] : A \\to \\nu F"
+category = "Basic Schemes"
 
 [[extra.gallery_items]]
-title = "Loss Function"
-description = "Cross-entropy loss for classification"
-katex = "\\mathcal{L} = -\\sum_{i} y_i \\log(\\hat{y}_i)"
-category = "Machine Learning"
+title = "Ana Definition"
+description = "Anamorphism unfolds its definition"
+katex = "\\text{ana} \\; \\psi = \\text{in} \\circ F\\,(\\text{ana} \\; \\psi) \\circ \\psi"
+category = "Basic Schemes"
 
 [[extra.gallery_items]]
-title = "Value at Risk"
-description = "The VaR at confidence level α"
-katex = "\\text{VaR}_\\alpha = -\\inf\\{x : P(X \\leq x) \\geq \\alpha\\}"
-category = "Risk"
+title = "Hylomorphism"
+description = "Fusion of unfold followed by fold"
+katex = "\\text{hylo} : (F\\,b \\to b) \\to (a \\to F\\,a) \\to a \\to b"
+category = "Basic Schemes"
 
 [[extra.gallery_items]]
-title = "Expected Shortfall"
-description = "Conditional expectation beyond VaR"
-katex = "\\text{ES}_\\alpha = \\mathbb{E}[X | X \\leq \\text{VaR}_\\alpha]"
-category = "Risk"
+title = "Hylo Fusion"
+description = "Hylomorphism fuses ana and cata"
+katex = "\\text{hylo} \\; \\phi \\; \\psi = \\text{cata} \\; \\phi \\circ \\text{ana} \\; \\psi"
+category = "Basic Schemes"
 
 [[extra.gallery_items]]
-title = "Portfolio Variance"
-description = "Risk of a portfolio with weight vector w"
-katex = "\\sigma_p^2 = w^T \\Sigma w"
-category = "Risk"
+title = "Paramorphism"
+description = "Fold with access to original substructure"
+katex = "\\text{para} : (F\\,(\\mu F, a) \\to a) \\to \\mu F \\to a"
+category = "Extended Schemes"
+
+[[extra.gallery_items]]
+title = "Para Definition"
+description = "Paramorphism passes both result and structure"
+katex = "\\text{para} \\; \\phi = \\phi \\circ F\\,\\langle id, \\text{para} \\; \\phi \\rangle \\circ \\text{out}"
+category = "Extended Schemes"
+
+[[extra.gallery_items]]
+title = "Apomorphism"
+description = "Unfold with early termination"
+katex = "\\text{apo} : (a \\to F\\,(\\nu F + a)) \\to a \\to \\nu F"
+category = "Extended Schemes"
+
+[[extra.gallery_items]]
+title = "Histomorphism"
+description = "Fold with access to computation history"
+katex = "\\text{histo} : (F\\,(\\text{Cofree } F\\, a) \\to a) \\to \\mu F \\to a"
+category = "History-Aware"
+
+[[extra.gallery_items]]
+title = "Cofree Comonad"
+description = "The carrier of histomorphism's history"
+katex = "\\text{Cofree } F\\, A = A \\times F\\,(\\text{Cofree } F\\, A)"
+category = "History-Aware"
+
+[[extra.gallery_items]]
+title = "Futumorphism"
+description = "Unfold generating multiple layers"
+katex = "\\text{futu} : (a \\to F\\,(\\text{Free } F\\, a)) \\to a \\to \\nu F"
+category = "History-Aware"
+
+[[extra.gallery_items]]
+title = "Free Monad"
+description = "The carrier of futumorphism's future"
+katex = "\\text{Free } F\\, A = A + F\\,(\\text{Free } F\\, A)"
+category = "History-Aware"
+
+[[extra.gallery_items]]
+title = "Chronomorphism"
+description = "History + future: the time-traveling scheme"
+katex = "\\text{chrono} : (F\\,(\\text{Cofree } F\\, b) \\to b) \\to (a \\to F\\,(\\text{Free } F\\, a)) \\to a \\to b"
+category = "History-Aware"
+
+[[extra.gallery_items]]
+title = "Zygomorphism"
+description = "Two mutually dependent folds"
+katex = "\\text{zygo} : (F\\,b \\to b) \\to (F\\,(b, a) \\to a) \\to \\mu F \\to a"
+category = "Advanced"
+
+[[extra.gallery_items]]
+title = "Mutumorphism"
+description = "Full mutual recursion between two folds"
+katex = "\\text{mutu} : (F\\,(a, b) \\to a) \\to (F\\,(a, b) \\to b) \\to \\mu F \\to (a, b)"
+category = "Advanced"
+
+[[extra.gallery_items]]
+title = "Dynamorphism"
+description = "Hylomorphism with memoization"
+katex = "\\text{dyna} : (F\\,(\\text{Cofree } F\\, b) \\to b) \\to (a \\to F\\,a) \\to a \\to b"
+category = "Advanced"
+
+[[extra.gallery_items]]
+title = "Prepromorphism"
+description = "Catamorphism with preprocessing"
+katex = "\\text{prepro} : (\\forall b.\\, F\\,b \\to F\\,b) \\to (F\\,a \\to a) \\to \\mu F \\to a"
+category = "Advanced"
 
 +++
 
-Explore mathematical formulas and concepts from the handbook. These expressions illustrate key ideas in categorical computational finance.
+Explore the mathematical type signatures and definitions that underpin recursion schemes. Each formula captures a unique recursion pattern.
 
 <div class="alert alert-info mt-4">
-<strong>Note:</strong> All formulas are rendered using KaTeX. Hover over cards to see the interactive effects.
+<strong>Notation Guide:</strong> $\mu F$ = initial algebra (finite structures), $\nu F$ = terminal coalgebra (potentially infinite). Brackets $\llbracket - \rrbracket$ denote catamorphisms ("banana brackets"), $[(-)]}$ denote anamorphisms ("lens brackets").
 </div>
+

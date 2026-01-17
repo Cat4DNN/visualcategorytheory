@@ -1,15 +1,15 @@
 +++
-title = "Handbook of Computational Finance"
+title = "The Recursion Schemes Compendium"
 
 
 # The homepage contents
 [extra]
-lead = '<b>Handbook of Computational Finance:</b> Category-Theoretical & AI-driven Approaches. A rigorous exploration of modern quantitative methods combining abstract mathematics with practical machine learning implementations.'
-url = "/chapters/part-1/introduction/"
-url_button = "Start Reading"
-repo_version = "First Edition"
-repo_license = "Academic & Professional"
-repo_url = "https://github.com/sergeoumbi/compfinance-book"
+lead = '<b>The Recursion Schemes Compendium:</b> Master the art of structured recursion. From catamorphisms to chronomorphisms, discover how to express complex recursive patterns through elegant, composable abstractions rooted in category theory.'
+url = "/schemes/foundations/introduction/"
+url_button = "Begin Learning"
+repo_version = "Complete Edition"
+repo_license = "Open Source"
+repo_url = "https://github.com/Cat4DNN/recursion-schemes"
 author = "Serge Youmbi"
 
 # Menu items
@@ -20,9 +20,9 @@ url = "/about/"
 weight = 10
 
 [[extra.menu.main]]
-name = "Chapters"
-section = "chapters"
-url = "/chapters/"
+name = "Schemes"
+section = "schemes"
+url = "/schemes/"
 weight = 20
 
 [[extra.menu.main]]
@@ -50,27 +50,27 @@ url = "/resources/"
 weight = 60
 
 [[extra.list]]
-title = "Category Theory Foundations"
-content = 'Master the mathematical structures underlying modern finance: functors, natural transformations, and monads applied to derivative pricing and risk management.'
+title = "Folds & Unfolds"
+content = 'Master catamorphisms (folds) and anamorphisms (unfolds) - the fundamental building blocks that capture the essence of consuming and producing recursive data structures.'
 
 [[extra.list]]
-title = "AI-Driven Trading Strategies"
-content = 'Implement cutting-edge machine learning models for alpha generation, including transformers, reinforcement learning, and neural differential equations.'
+title = "Refolds & Compositions"
+content = 'Combine folds and unfolds into powerful hylomorphisms. Learn how these compositions enable efficient algorithms by fusing production and consumption into a single pass.'
 
 [[extra.list]]
-title = "Mathematical Rigor"
-content = 'Every concept backed by formal proofs and type-safe implementations. From measure theory to stochastic calculus with categorical semantics.'
+title = "History & Future"
+content = 'Explore histomorphisms and futumorphisms - schemes that provide access to previously computed values or allow generation of multiple layers at once.'
 
 [[extra.list]]
-title = "Executable Examples"
-content = 'Full code implementations in Python, Haskell, and Julia. All models can be run directly from the companion repository.'
+title = "Categorical Foundations"
+content = 'Understand the deep connection to F-algebras, F-coalgebras, initial algebras, and terminal coalgebras. See how category theory provides the theoretical backbone.'
 
 [[extra.list]]
-title = "Risk & Portfolio Theory"
-content = 'Modern portfolio optimization through the lens of category theory. Coherent risk measures, convex optimization, and functorial approaches to hedging.'
+title = "Practical Haskell"
+content = 'Every scheme comes with complete Haskell implementations using the recursion-schemes library. Learn to apply these patterns in real functional codebases.'
 
 [[extra.list]]
-title = "Production-Ready Code"
-content = 'Bridge theory and practice with deployable trading systems. Real-time data pipelines, backtesting frameworks, and performance optimization.'
+title = "Advanced Patterns"
+content = 'Go beyond the basics with zygomorphisms, mutumorphisms, dynamorphisms, and chronomorphisms. Master the full zoo of recursion schemes.'
 
 +++

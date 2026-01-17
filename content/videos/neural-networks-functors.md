@@ -1,6 +1,6 @@
 +++
-title = "Neural Networks as Parameterized Functors"
-description = "Understanding deep learning through the lens of category theory."
+title = "The Big Three: Cata, Ana, Hylo"
+description = "Master the fundamental trio: catamorphism, anamorphism, and hylomorphism."
 date = 2024-02-01T10:00:00+00:00
 draft = false
 weight = 20
@@ -8,75 +8,85 @@ template = "videos/page.html"
 
 [extra]
 youtube_id = "dQw4w9WgXcQ"
-duration = "55 min"
+duration = "65 min"
 level = "Intermediate"
-chapter = 8
-katex_thumbnail = "F(g \\circ f) = F(g) \\circ F(f)"
+chapter = 2
+katex_thumbnail = "\\llbracket \\phi \\rrbracket : \\mu F \\to A"
 resources = [
-  { title = "Lecture Slides (PDF)", url = "/resources/slides/neural-functors.pdf", type = "PDF" },
-  { title = "PyTorch Notebook", url = "https://github.com/example/notebooks/neural-functors.ipynb", type = "Code" }
+  { title = "Lecture Slides (PDF)", url = "/resources/slides/basic-schemes.pdf", type = "PDF" },
+  { title = "Live Coding Session", url = "https://github.com/example/recursion-schemes/basic.hs", type = "Code" },
+  { title = "Cheat Sheet", url = "/resources/cheatsheet.pdf", type = "PDF" }
 ]
 +++
 
 ## Video Overview
 
-This video explores the categorical interpretation of neural networks. We'll see how layers are morphisms, networks are compositions, and training is optimization in a structured space.
+In this video, we implement and deeply understand the three most fundamental recursion schemes: catamorphism (fold), anamorphism (unfold), and their fusion into hylomorphism (refold).
 
 ## Topics Covered
 
-### Neural Layers as Morphisms
-- Linear layers as linear maps
-- Activation functions as natural transformations
-- The category **Para** of parameterized morphisms
+### Catamorphism: The Universal Fold
+- The banana bracket notation $\llbracket \phi \rrbracket$
+- Why it's called "downward transformation" (from Greek κατά)
+- Implementing `cata` from scratch
+- Examples: sum, length, eval, pretty-print
 
-### Backpropagation Categorically
-- Automatic differentiation as a functor
-- The reverse derivative category
-- Efficient gradient computation
+### Anamorphism: The Universal Unfold
+- The lens bracket notation $[(\psi)]$
+- Why it's "upward generation" (from Greek ἀνά)
+- Implementing `ana` from scratch
+- Examples: replicate, iterate, unfold trees
 
-### Trading Strategy Networks
-- Designing neural architectures for finance
-- Feature engineering as preprocessing functors
-- End-to-end learning pipelines
+### Hylomorphism: Fused Computation
+- The assembly line pattern
+- Why intermediate structure can be eliminated
+- Fusion law: $\text{hylo} = \text{cata} \circ \text{ana}$
+- Examples: factorial, merge sort, Fibonacci
 
-## Code Walkthrough
+## Live Coding Demo
 
-We'll implement a complete neural trading strategy:
+Watch as we build each scheme step by step:
 
-```python
-import torch
-import torch.nn as nn
+```haskell
+-- Starting from types...
+newtype Fix f = Fix { unFix :: f (Fix f) }
 
-class TradingNetwork(nn.Module):
-    """A neural trading strategy as a parameterized functor."""
+-- To implementations...
+cata :: Functor f => (f a -> a) -> Fix f -> a
+cata alg = alg . fmap (cata alg) . unFix
 
-    def __init__(self, feature_dim: int, hidden_dim: int = 128):
-        super().__init__()
-        self.encoder = nn.Sequential(
-            nn.Linear(feature_dim, hidden_dim),
-            nn.LayerNorm(hidden_dim),
-            nn.ReLU(),
-        )
-        self.position_head = nn.Sequential(
-            nn.Linear(hidden_dim, 3),
-            nn.Softmax(dim=-1)
-        )
+ana :: Functor f => (a -> f a) -> a -> Fix f
+ana coalg = Fix . fmap (ana coalg) . coalg
 
-    def forward(self, features: torch.Tensor) -> torch.Tensor:
-        encoded = self.encoder(features)
-        return self.position_head(encoded)
+hylo :: Functor f => (f b -> b) -> (a -> f a) -> a -> b
+hylo alg coalg = alg . fmap (hylo alg coalg) . coalg
 ```
 
-## Mathematical Details
+## Mathematical Essence
 
-The composition of neural layers follows the functor laws:
+The key insight: catamorphisms are **unique** homomorphisms from the initial algebra:
 
-$$F(g \circ f) = F(g) \circ F(f)$$
+$$\text{cata} \; \phi = \phi \circ F\,(\text{cata} \; \phi) \circ \text{out}$$
 
-This ensures that gradient computation is correct and efficient.
+This universality means there's only one way to fold that respects the algebra structure.
+
+## Key Takeaways
+
+1. **Cata is for consumption** - When you have structure, fold it
+2. **Ana is for production** - When you need structure, generate it
+3. **Hylo is for transformation** - When structure is intermediate, fuse
+4. **Types guide implementation** - The signatures almost write themselves
 
 ## Prerequisites
 
-- Familiarity with neural networks and PyTorch
-- Understanding of basic category theory (from Video 1)
-- Chapter 8 of the handbook
+- Completed the Foundations video
+- Comfortable with pattern functors (ListF, TreeF)
+- Basic understanding of F-algebras
+
+## Next Steps
+
+After this video:
+- Implement your own schemes for custom data types
+- Explore paramorphism and apomorphism
+- Read the Basic Schemes section
+

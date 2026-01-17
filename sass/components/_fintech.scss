@@ -1,5 +1,5 @@
-// Fintech Styling Component
-// Provides glow effects, trading terminal aesthetics, and book-specific styling
+// Recursion Schemes Styling Component
+// Provides styling for formula displays, cards, and scheme-specific aesthetics
 
 // ============================================
 // Video Section Styling
@@ -62,13 +62,13 @@
     .placeholder-bg {
       width: 100%;
       height: 180px;
-      background: linear-gradient(135deg, $fintech-navy 0%, $fintech-card 100%);
+      background: linear-gradient(135deg, $scheme-navy 0%, $scheme-card 100%);
       display: flex;
       align-items: center;
       justify-content: center;
 
       svg {
-        color: $fintech-blue;
+        color: $scheme-purple;
         opacity: 0.5;
       }
     }
@@ -147,19 +147,19 @@
 }
 
 // ============================================
-// Fintech Glow Effects
+// Scheme Glow Effects
 // ============================================
 
-.fintech-glow {
-  box-shadow: 0 0 20px rgba($fintech-blue, 0.3);
+.scheme-glow {
+  box-shadow: 0 0 20px rgba($scheme-purple, 0.3);
 }
 
-.fintech-glow-green {
-  box-shadow: 0 0 20px rgba($fintech-green, 0.3);
+.scheme-glow-cyan {
+  box-shadow: 0 0 20px rgba($scheme-cyan, 0.3);
 }
 
-.fintech-glow-red {
-  box-shadow: 0 0 20px rgba($fintech-red, 0.3);
+.scheme-glow-green {
+  box-shadow: 0 0 20px rgba($scheme-green, 0.3);
 }
 
 // Button glow on hover
@@ -202,8 +202,8 @@ code {
   padding: 1.5rem 0;
 
   .formula-card {
-    background: linear-gradient(135deg, rgba($fintech-navy, 0.03) 0%, rgba($fintech-blue, 0.05) 100%);
-    border: 1px solid rgba($fintech-blue, 0.15);
+    background: linear-gradient(135deg, rgba($scheme-navy, 0.03) 0%, rgba($scheme-purple, 0.05) 100%);
+    border: 1px solid rgba($scheme-purple, 0.15);
     border-radius: 12px;
     padding: 1.5rem 1rem;
     margin: 0.5rem;
@@ -211,13 +211,13 @@ code {
 
     &:hover {
       transform: translateY(-2px);
-      border-color: rgba($fintech-blue, 0.4);
-      box-shadow: 0 8px 25px rgba($fintech-blue, 0.15);
+      border-color: rgba($scheme-purple, 0.4);
+      box-shadow: 0 8px 25px rgba($scheme-purple, 0.15);
     }
 
     &.highlight {
-      background: linear-gradient(135deg, rgba($fintech-blue, 0.08) 0%, rgba($fintech-purple, 0.08) 100%);
-      border-color: rgba($fintech-blue, 0.3);
+      background: linear-gradient(135deg, rgba($scheme-purple, 0.08) 0%, rgba($scheme-violet, 0.08) 100%);
+      border-color: rgba($scheme-purple, 0.3);
     }
 
     .katex {
@@ -236,7 +236,7 @@ code {
   color: $gray-600;
 
   strong {
-    color: $fintech-blue;
+    color: $scheme-purple;
     font-weight: 600;
   }
 }
@@ -258,7 +258,7 @@ code {
   }
 
   .katex-display-wrapper {
-    background: linear-gradient(135deg, $fintech-navy 0%, darken($fintech-navy, 5%) 100%);
+    background: linear-gradient(135deg, $scheme-navy 0%, darken($scheme-navy, 5%) 100%);
     padding: 2rem 1rem;
     min-height: 180px;
     display: flex;
@@ -266,7 +266,7 @@ code {
     justify-content: center;
 
     .katex {
-      color: $fintech-blue;
+      color: $scheme-lavender;
       font-size: 1.3rem;
     }
   }
@@ -287,7 +287,7 @@ code {
 // ============================================
 
 .katex-video-thumbnail {
-  background: linear-gradient(135deg, $fintech-navy 0%, darken($fintech-navy, 5%) 100%);
+  background: linear-gradient(135deg, $scheme-navy 0%, darken($scheme-navy, 5%) 100%);
   min-height: 180px;
   display: flex;
   flex-direction: column;
@@ -297,7 +297,7 @@ code {
   position: relative;
 
   .katex {
-    color: $fintech-blue;
+    color: $scheme-lavender;
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
   }
@@ -340,9 +340,9 @@ code {
       bottom: 0;
       background: linear-gradient(
         135deg,
-        rgba($fintech-blue, 0.03) 0%,
+        rgba($scheme-purple, 0.03) 0%,
         transparent 50%,
-        rgba($fintech-purple, 0.03) 100%
+        rgba($scheme-violet, 0.03) 100%
       );
       pointer-events: none;
     }
@@ -393,50 +393,50 @@ code {
 body.dark {
   .video-card,
   .gallery-card {
-    background: $fintech-card;
-    border-color: lighten($fintech-navy, 10%);
+    background: $scheme-card;
+    border-color: lighten($scheme-navy, 10%);
 
     &:hover {
-      border-color: $fintech-blue;
-      box-shadow: 0 0 30px rgba($fintech-blue, 0.2);
+      border-color: $scheme-purple;
+      box-shadow: 0 0 30px rgba($scheme-purple, 0.2);
     }
   }
 
   .placeholder-bg {
-    background: linear-gradient(135deg, $fintech-navy 0%, lighten($fintech-navy, 5%) 100%);
+    background: linear-gradient(135deg, $scheme-navy 0%, lighten($scheme-navy, 5%) 100%);
   }
 
   pre {
-    border-color: lighten($fintech-navy, 10%);
+    border-color: lighten($scheme-navy, 10%);
   }
 
   .card {
     &:hover {
-      box-shadow: 0 0 30px rgba($fintech-blue, 0.15);
+      box-shadow: 0 0 30px rgba($scheme-purple, 0.15);
     }
   }
 
   .home .section-hero::before {
     background: linear-gradient(
       135deg,
-      rgba($fintech-blue, 0.08) 0%,
+      rgba($scheme-purple, 0.08) 0%,
       transparent 50%,
-      rgba($fintech-purple, 0.08) 100%
+      rgba($scheme-violet, 0.08) 100%
     );
   }
 
   // KaTeX Hero Dark Mode
   .katex-hero-illustration .formula-card {
-    background: linear-gradient(135deg, rgba($fintech-blue, 0.08) 0%, rgba($fintech-purple, 0.05) 100%);
-    border-color: rgba($fintech-blue, 0.3);
+    background: linear-gradient(135deg, rgba($scheme-purple, 0.08) 0%, rgba($scheme-violet, 0.05) 100%);
+    border-color: rgba($scheme-purple, 0.3);
 
     &.highlight {
-      background: linear-gradient(135deg, rgba($fintech-blue, 0.15) 0%, rgba($fintech-purple, 0.1) 100%);
-      border-color: rgba($fintech-blue, 0.5);
+      background: linear-gradient(135deg, rgba($scheme-purple, 0.15) 0%, rgba($scheme-violet, 0.1) 100%);
+      border-color: rgba($scheme-purple, 0.5);
     }
 
     &:hover {
-      box-shadow: 0 8px 25px rgba($fintech-blue, 0.25);
+      box-shadow: 0 8px 25px rgba($scheme-purple, 0.25);
     }
   }
 
@@ -444,39 +444,39 @@ body.dark {
     color: $gray-400;
 
     strong {
-      color: $fintech-blue;
+      color: $scheme-lavender;
     }
   }
 
   // KaTeX Gallery Dark Mode
   .katex-gallery-card {
-    background: $fintech-card;
-    border-color: lighten($fintech-navy, 10%);
+    background: $scheme-card;
+    border-color: lighten($scheme-navy, 10%);
 
     &:hover {
-      border-color: $fintech-blue;
-      box-shadow: 0 0 30px rgba($fintech-blue, 0.2);
+      border-color: $scheme-purple;
+      box-shadow: 0 0 30px rgba($scheme-purple, 0.2);
     }
 
     .gallery-caption {
-      background: $fintech-card;
+      background: $scheme-card;
     }
   }
 }
 
 // ============================================
-// Trading-specific Colors
+// Scheme Type Colors
 // ============================================
 
-.price-up, .bullish {
-  color: $fintech-green;
+.scheme-fold {
+  color: $scheme-purple;
 }
 
-.price-down, .bearish {
-  color: $fintech-red;
+.scheme-unfold {
+  color: $scheme-cyan;
 }
 
-.price-neutral {
+.scheme-neutral {
   color: $gray-500;
 }
 
@@ -494,7 +494,7 @@ body.dark {
 }
 
 body.dark .author-page .author-photo div {
-  box-shadow: 0 0 30px rgba($fintech-blue, 0.3);
+  box-shadow: 0 0 30px rgba($scheme-purple, 0.3);
 }
 
 // ============================================
@@ -508,7 +508,7 @@ body.dark .author-page .author-photo div {
 }
 
 .badge.bg-primary {
-  background-color: $fintech-blue !important;
+  background-color: $scheme-purple !important;
 }
 
 .badge.bg-secondary {
@@ -516,11 +516,11 @@ body.dark .author-page .author-photo div {
 }
 
 .badge.bg-success {
-  background-color: $fintech-green !important;
+  background-color: $scheme-green !important;
 }
 
-.badge.bg-danger {
-  background-color: $fintech-red !important;
+.badge.bg-info {
+  background-color: $scheme-cyan !important;
 }
 
 // ============================================
@@ -529,13 +529,14 @@ body.dark .author-page .author-photo div {
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 10px rgba($fintech-blue, 0.3);
+    box-shadow: 0 0 10px rgba($scheme-purple, 0.3);
   }
   50% {
-    box-shadow: 0 0 20px rgba($fintech-blue, 0.5);
+    box-shadow: 0 0 20px rgba($scheme-purple, 0.5);
   }
 }
 
 .animate-glow {
   animation: pulse-glow 2s ease-in-out infinite;
 }
+

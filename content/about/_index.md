@@ -1,107 +1,129 @@
 +++
-title = "About the Book"
-description = "Learn about the Handbook of Computational Finance: its goals, methodology, and what you'll learn."
+title = "About This Compendium"
+description = "Learn about The Recursion Schemes Compendium: its goals, structure, and what you'll master."
 template = "about/section.html"
 +++
 
-## A New Approach to Quantitative Finance
+## Taming Recursion with Mathematics
 
-**Handbook of Computational Finance: Category-Theoretical & AI-driven Approaches** represents a paradigm shift in how we teach and practice quantitative finance. By unifying abstract mathematics with cutting-edge machine learning, this book provides a rigorous yet practical framework for the modern quant.
-
----
-
-## What Makes This Book Different
-
-### Category Theory as the Unifying Language
-
-Traditional finance textbooks treat each topic in isolation: options pricing, portfolio theory, risk management, and machine learning appear as disconnected subjects. This book reveals the deep mathematical structures that connect them all.
-
-**Category theory provides:**
-- A precise language for discussing relationships between financial objects
-- Tools for building composable, reusable models
-- A framework for understanding when analogies between different domains are exact
-
-### AI/ML as Implementation
-
-Where traditional texts stop at closed-form solutions, we continue into the realm of practical computation:
-
-- Neural network approximations for intractable problems
-- Reinforcement learning for optimal execution
-- Deep hedging for incomplete markets
-- Generative models for scenario analysis
-
-### Code-First Philosophy
-
-Every concept is accompanied by executable code. Theory without implementation is incomplete; implementation without theory is dangerous. We provide both.
+**The Recursion Schemes Compendium** is your comprehensive guide to understanding, implementing, and mastering recursion schemes in functional programming. By factoring out recursion patterns into reusable abstractions, we transform ad-hoc recursive code into composable, provably correct programs.
 
 ---
 
-## Who This Book Is For
+## What Are Recursion Schemes?
 
-### Quantitative Analysts & Traders
+Recursion schemes are **structured patterns for traversing and transforming recursive data structures**. Instead of writing explicit recursion, you:
 
-If you're building trading systems or pricing models, this book provides the mathematical depth and practical tools you need. The categorical perspective will change how you think about model composition and risk transfer.
+1. **Describe what you want** at each layer of the structure (the algebra/coalgebra)
+2. **Let the scheme handle** how to recursively apply it
 
-### Graduate Students
+This separation yields code that is:
+- **More composable**: Algebras combine like Lego blocks
+- **Easier to reason about**: Each piece is independently testable
+- **Often more efficient**: Schemes enable fusion optimizations
+- **Categorically principled**: Backed by solid mathematical foundations
 
-For students in mathematical finance, financial engineering, or applied mathematics, this text bridges the gap between pure theory and industry practice. The category-theoretic approach prepares you for research frontiers.
+---
 
-### Software Engineers in Finance
+## What Makes This Compendium Different
 
-If you're implementing financial systems, understanding the mathematical structures will help you design better APIs, catch bugs earlier, and communicate more effectively with quants.
+### From Theory to Practice
 
-### Researchers
+Many resources on recursion schemes are either too theoretical (category theory papers) or too shallow (blog post introductions). This compendium bridges both worlds:
 
-For academics exploring the intersection of category theory, probability, and machine learning, this book provides concrete applications and open problems.
+- **Rigorous definitions** with categorical foundations
+- **Intuitive explanations** with diagrams and examples
+- **Practical code** using the `recursion-schemes` library
+- **Real-world applications** in compilers, interpreters, and data processing
+
+### Comprehensive Coverage
+
+We cover the full spectrum of schemes:
+
+| Foundation | Core | Extended | History-Aware | Advanced |
+|------------|------|----------|---------------|----------|
+| F-Algebras | Catamorphism | Paramorphism | Histomorphism | Zygomorphism |
+| Fixed Points | Anamorphism | Apomorphism | Futumorphism | Mutumorphism |
+| Mu/Nu | Hylomorphism | | Chronomorphism | Dynamorphism |
+
+Plus exotic schemes: Elgot algebras, Mendler-style, prepromorphisms, and more.
+
+### Code That Works
+
+All code examples are tested Haskell using Edward Kmett's `recursion-schemes` library. You can copy-paste and run immediately.
+
+---
+
+## Who This Is For
+
+### Functional Programmers
+
+If you write Haskell, Scala, PureScript, or other FP languages, recursion schemes will level up your code. You'll see patterns you've written a hundred times crystallize into named, reusable abstractions.
+
+### Compiler Writers
+
+Recursion schemes are the natural language of AST manipulation. Constant folding? Catamorphism. Type inference? Paramorphism. Code generation? Hylomorphism. This compendium shows you how.
+
+### Computer Science Students
+
+For students studying programming languages, type theory, or category theory, recursion schemes provide concrete applications of abstract concepts. See functors, coalgebras, and fixed points in action.
+
+### Curious Developers
+
+Even if you don't write Haskell daily, understanding recursion schemes improves how you think about any recursive problem. The patterns translate to any language.
 
 ---
 
 ## Learning Outcomes
 
-By the end of this book, you will be able to:
+By working through this compendium, you will:
 
-1. **Apply category theory** to model financial instruments and their relationships
-2. **Derive pricing formulas** using measure-theoretic probability and martingale theory
-3. **Implement trading strategies** using modern ML frameworks
-4. **Construct risk measures** that satisfy coherence axioms
-5. **Design portfolio optimization** algorithms with categorical guarantees
-6. **Build backtesting systems** that correctly account for lookahead bias
-7. **Deploy production trading systems** with appropriate safeguards
-
----
-
-## Book Structure
-
-### Part I: Mathematical Foundations
-Covers category theory, measure theory, and stochastic calculus with a categorical lens.
-
-### Part II: Trading Strategies
-Algorithmic trading, market microstructure, and execution algorithms.
-
-### Part III: Risk Management
-Coherent risk measures, portfolio optimization, and stress testing.
-
-### Part IV: Machine Learning
-Deep learning for finance, reinforcement learning, and neural SDEs.
-
-### Appendices
-Mathematical background, code reference, and exercise solutions.
+1. **Understand** the categorical foundations: functors, (co)algebras, fixed points
+2. **Recognize** recursion patterns in existing code
+3. **Apply** the right scheme for each problem
+4. **Implement** schemes from scratch and with the library
+5. **Compose** multiple schemes for complex transformations
+6. **Optimize** using fusion laws and advanced techniques
+7. **Design** your own algebras for domain-specific problems
 
 ---
 
-## Technical Requirements
+## Compendium Structure
 
-To get the most from this book, you should have:
+### Foundations
+F-algebras, F-coalgebras, fixed points (Fix, Mu, Nu), and Lambek's lemma.
 
-- **Mathematical background**: Linear algebra, calculus, basic probability
-- **Programming experience**: Python proficiency; Haskell familiarity helpful but not required
-- **Computing environment**: Python 3.10+, PyTorch, standard scientific stack
+### Basic Schemes
+Catamorphism (fold), anamorphism (unfold), and hylomorphism (refold).
 
-Code is available in the companion repository with Jupyter notebooks for each chapter.
+### Extended Schemes
+Paramorphism (fold with structure), apomorphism (unfold with early termination).
+
+### History-Aware Schemes
+Histomorphism (fold with history), futumorphism (unfold multiple layers), chronomorphism (both).
+
+### Advanced Schemes
+Zygomorphism, mutumorphism, dynamorphism, prepromorphism, and the scheme zoo.
+
+### Practical Guide
+Using the library, patterns, and real-world applications.
+
+---
+
+## Technical Prerequisites
+
+To get the most from this compendium:
+
+- **Haskell basics**: Pattern matching, algebraic data types, type classes
+- **Functor familiarity**: Understanding `fmap` and the Functor laws
+- **Recursive thinking**: Comfort with recursive data structures like lists and trees
+
+Category theory knowledge is **helpful but not required**—we build up the necessary concepts as we go.
 
 ---
 
 <div class="text-center mt-5">
-  <a href="/chapters/" class="btn btn-primary btn-lg">Start Reading</a>
-  <a href="/resources/" class="btn btn-outline-primary btn-lg ms-3">Get Resources</a>
+  <a href="/schemes/foundations/introduction/" class="btn btn-primary btn-lg">Start Learning</a>
+  <a href="/schemes/" class="btn btn-outline-primary btn-lg ms-3">Browse Schemes</a>
 </div>
+

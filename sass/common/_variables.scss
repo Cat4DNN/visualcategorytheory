@@ -12,26 +12,27 @@ $gray-800: #343a40;
 $gray-900: #212529;
 $black:    #000;
 
-// Fintech Color Palette
-$fintech-navy:    #0a0e27;  // Dark background
-$fintech-card:    #131a2e;  // Card/surface
-$fintech-blue:    #00d9ff;  // Primary accent (neon cyan)
-$fintech-green:   #00ff88;  // Success/bullish
-$fintech-red:     #ff4757;  // Warning/bearish
-$fintech-purple:  #9c88ff;  // Secondary accent
-$fintech-gold:    #ffd32a;  // Highlight/premium
+// Recursion Schemes Color Palette
+$scheme-navy:     #0d0a1f;  // Dark background
+$scheme-card:     #1a1528;  // Card/surface
+$scheme-purple:   #9b59b6;  // Primary accent (violet)
+$scheme-violet:   #8e44ad;  // Deeper violet
+$scheme-lavender: #d8b4fe;  // Light lavender
+$scheme-cyan:     #22d3ee;  // Accent for code
+$scheme-amber:    #f59e0b;  // Highlight for important
+$scheme-green:    #10b981;  // Success states
 
 $yellow:   #ffe000;
 $black:    #1d2d35;
 $beige:    #fbf7f0;
-$purple:   #5d2f86;
+$purple:   $scheme-purple;
 $brown:    #aa9c84;
 
-$blue-300: $fintech-blue;  // Use fintech cyan as primary blue
+$blue-300: $scheme-cyan;  // Use scheme cyan for accents
 $pink-500: #d32e9d;
 
-// Set primary to fintech cyan for a modern finance look
-$primary: $fintech-blue;
+// Set primary to violet for recursion schemes aesthetic
+$primary: $scheme-purple;
 
 // Options
 //

@@ -1,6 +1,6 @@
 +++
 title = "About the Author"
-description = "Serge Youmbi - Category theory enthusiast, deep learning practitioner, and functional programming advocate."
+description = "Serge Youmbi - Functional programming enthusiast and category theory advocate."
 template = "author/section.html"
 +++
 
@@ -8,7 +8,7 @@ template = "author/section.html"
 <div class="col-md-4 text-center">
 <div class="author-photo mb-3">
 <!-- Author photo placeholder -->
-<div style="width: 200px; height: 200px; background: linear-gradient(135deg, #00d9ff 0%, #9c88ff 100%); border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center;">
+<div style="width: 200px; height: 200px; background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center;">
 <span style="font-size: 4rem; color: white;">SY</span>
 </div>
 </div>
@@ -17,53 +17,72 @@ template = "author/section.html"
 
 ## Hi, I'm Serge Youmbi
 
-**Category Theory Enthusiast | Deep Learning Practitioner | Functional Programming Advocate**
+**Functional Programming Enthusiast | Category Theory Advocate | Recursion Scheme Explorer**
 
-I'm passionate about the intersection of abstract mathematics and practical machine learning. My work focuses on applying categorical structures to solve real-world problems in computational finance.
+I'm passionate about the deep mathematics underlying functional programming. Recursion schemes represent the perfect fusion of categorical elegance and practical utility—structured patterns that make complex transformations simple and correct.
 
 </div>
 </div>
+
+---
+
+## Why Recursion Schemes?
+
+I created this compendium because I believe recursion schemes deserve a wider audience. Despite their power, they remain underutilized—buried in academic papers or briefly mentioned in blog posts. My goal is to bridge this gap.
+
+### The Journey
+
+My fascination with recursion schemes began with a simple question: *Why do so many recursive functions look the same?* The answer led me through:
+
+- **Folds and unfolds** - Recognizing the universal patterns
+- **F-Algebras** - Understanding the categorical foundation
+- **The recursion-schemes library** - Applying theory to practice
+- **Real-world applications** - Compilers, interpreters, and more
+
+### The Vision
+
+This compendium aims to:
+
+1. **Demystify** the mathematical foundations
+2. **Provide intuition** through examples and visualizations
+3. **Enable practice** with working Haskell code
+4. **Show applications** in real software
 
 ---
 
 ## Interests & Focus
 
-### Category Theory & Deep Learning
+### Category Theory & Programming
 
-I'm deeply interested in the mathematical foundations that underlie modern machine learning. Category theory provides a powerful lens for understanding neural networks, data transformations, and the compositional nature of complex systems.
+Category theory provides a unifying language for programming concepts. Functors, natural transformations, and universal properties aren't just abstract mathematics—they're design patterns waiting to be applied.
 
-### Current Learning Journey
+### Current Explorations
 
-I'm currently upgrading my grasp of advanced categorical concepts:
-
-- **2-Categories & Bicategories** - Higher categorical structures for modeling complex relationships
-- **Double Categories** - Capturing both horizontal and vertical composition
-- **Sheaves & Toposes** - Generalized spaces and logic
-- **Categorical Logic** - The deep connection between logic and category theory
-
-### Collaboration
-
-I'm always willing to collaborate on projects at the intersection of **category theory and deep learning**. If you're working on:
-
-- Categorical foundations for neural networks
-- Functorial approaches to machine learning
-- Type-theoretic deep learning frameworks
-- Applied category theory in finance
-
-Let's connect!
+- **Recursion schemes zoo** - Cataloging exotic patterns
+- **Typed effects** - Effect systems through a categorical lens
+- **Program synthesis** - Generating code from specifications
+- **Dependent types** - Programming with proofs
 
 ---
 
 ## Functional Programming
 
-In my spare time, I love exploring functional programming languages. There's something deeply satisfying about expressing ideas in a mathematically rigorous way:
+The functional paradigm aligns perfectly with mathematical thinking. My languages of choice:
 
 <div class="row mt-4 mb-4">
 <div class="col-md-4">
 <div class="card h-100">
 <div class="card-body text-center">
 <h4>Haskell</h4>
-<p class="text-muted">Pure functional programming with strong static typing and lazy evaluation</p>
+<p class="text-muted">Pure FP with strong types, where recursion schemes shine brightest</p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card h-100">
+<div class="card-body text-center">
+<h4>PureScript</h4>
+<p class="text-muted">Haskell for the web, bringing schemes to frontend</p>
 </div>
 </div>
 </div>
@@ -71,21 +90,11 @@ In my spare time, I love exploring functional programming languages. There's som
 <div class="card h-100">
 <div class="card-body text-center">
 <h4>Scala</h4>
-<p class="text-muted">Blending functional and object-oriented paradigms on the JVM</p>
-</div>
-</div>
-</div>
-<div class="col-md-4">
-<div class="card h-100">
-<div class="card-body text-center">
-<h4>OCaml</h4>
-<p class="text-muted">Pragmatic functional programming with excellent type inference</p>
+<p class="text-muted">Where FP meets industry at scale</p>
 </div>
 </div>
 </div>
 </div>
-
-These languages share a common thread: they make it natural to think in terms of composition, types, and mathematical structures - the same concepts that drive category theory.
 
 ---
 
@@ -94,40 +103,33 @@ These languages share a common thread: they make it natural to think in terms of
 <div class="row mt-4">
 <div class="col-md-6">
 
-### Professional
+### Code & Projects
 
-- **GitHub**: [github.com/sergeyoumbi](https://github.com/sergeyoumbi)
-- **Cat4DNN Project**: [github.com/Cat4DNN](https://github.com/Cat4DNN)
-- **LinkedIn**: [linkedin.com/in/sergeyoumbi](https://linkedin.com/in/sergeyoumbi)
+- **GitHub**: [github.com/cat4dnn](https://github.com/cat4dnn)
+- **This Compendium**: [Recursion Schemes Site](/)
 
 </div>
 <div class="col-md-6">
 
-### Social & Contact
+### Contact
 
-- **YouTube**: [Category Theory & DNN](https://youtube.com/channel/UCtQUTq8fvWQAQKx72HLdzLw)
-- **X/Twitter**: [@CatDNN](https://twitter.com/CatDNN)
 - **Email**: [serge.youms56@gmail.com](mailto:serge.youms56@gmail.com)
 
-I'm always happy to discuss category theory, deep learning, functional programming, or potential collaborations.
+I'm always happy to discuss recursion schemes, category theory, or functional programming!
 
 </div>
 </div>
 
 ---
 
-## About This Book
+## About This Compendium
 
-This handbook represents my attempt to bridge the gap between abstract mathematical beauty and practical computational finance. By viewing financial systems through a categorical lens, we can:
+This compendium represents my attempt to create the resource I wish I'd had when learning recursion schemes. By treating each scheme systematically—with definitions, intuitions, examples, and code—I hope to make these powerful patterns accessible to all functional programmers.
 
-- **Identify deep patterns** that connect seemingly disparate areas
-- **Build composable systems** that are easier to reason about
-- **Leverage type safety** to catch errors at compile time
-- **Apply ML rigorously** with mathematical foundations
-
-Whether you're a mathematician curious about finance, a quant looking for new perspectives, or a developer interested in functional approaches to trading systems, I hope this book provides valuable insights.
+Whether you're a Haskell veteran or just curious about structured recursion, I hope you find value here.
 
 <div class="text-center mt-5">
 <a href="mailto:serge.youms56@gmail.com" class="btn btn-primary btn-lg">Get in Touch</a>
-<a href="/chapters/" class="btn btn-outline-primary btn-lg ms-3">Start Reading</a>
+<a href="/schemes/" class="btn btn-outline-primary btn-lg ms-3">Start Learning</a>
 </div>
+

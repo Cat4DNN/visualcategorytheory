@@ -1,19 +1,19 @@
 /** Theme variables */
 
-// Fintech Dark Theme - Modern finance aesthetic
-$body-bg-dark: $fintech-navy;
-$body-overlay-dark: $fintech-card;
-$border-dark: lighten($fintech-navy, 10%);
+// Recursion Schemes Dark Theme - Mathematical elegance
+$body-bg-dark: $scheme-navy;
+$body-overlay-dark: $scheme-card;
+$border-dark: lighten($scheme-navy, 10%);
 $body-color-dark: $gray-300;
 $dots-dark: darken($body-color-dark, 50%);
 
-$link-color-dark: $fintech-blue;
-$button-color-dark: $fintech-blue;
-$focus-color-dark: lighten($fintech-blue, 10%);
+$link-color-dark: $scheme-lavender;
+$button-color-dark: $scheme-purple;
+$focus-color-dark: lighten($scheme-purple, 10%);
 
 $navbar-dark-color:                 $body-color-dark;
-$navbar-dark-hover-color:           $fintech-blue;
-$navbar-dark-active-color:          $fintech-blue;
+$navbar-dark-hover-color:           $scheme-lavender;
+$navbar-dark-active-color:          $scheme-lavender;
 $navbar-dark-disabled-color:        rgba($body-color-dark, 0.5);
 
 /** Theme styles */
@@ -34,7 +34,7 @@ body.dark a.text-body {
 body.dark .btn-primary {
   @include button-variant($button-color-dark, $button-color-dark);
 
-  color: $body-bg-dark !important;
+  color: $white !important;
 }
 
 body.dark .btn-outline-primary {
@@ -44,7 +44,7 @@ body.dark .btn-outline-primary {
 }
 
 body.dark .btn-outline-primary:hover {
-  color: $body-bg-dark;
+  color: $white;
 }
 
 body.dark .navbar {
@@ -199,7 +199,7 @@ body.dark pre code::-webkit-scrollbar-thumb:hover {
 }
 
 body.dark blockquote {
-  border-left: 3px solid $fintech-blue;
+  border-left: 3px solid $scheme-purple;
 }
 
 body.dark .footer {
@@ -325,9 +325,9 @@ body.dark .copy-status:active::after {
   color: $link-color-dark;
 }
 
-// Fintech glow effects for dark mode
+// Recursion Schemes glow effects for dark mode
 body.dark .btn-primary:hover {
-  box-shadow: 0 0 20px rgba($fintech-blue, 0.4);
+  box-shadow: 0 0 20px rgba($scheme-purple, 0.4);
 }
 
 body.dark h1, body.dark h2, body.dark h3 {
@@ -338,13 +338,19 @@ body.dark .lead {
   color: $gray-400;
 }
 
-// Bullish/Bearish colors for finance content
-body.dark .bullish, body.dark .positive, body.dark .success-indicator {
-  color: $fintech-green;
+// Code highlighting accents
+body.dark code {
+  color: $scheme-cyan;
 }
 
-body.dark .bearish, body.dark .negative, body.dark .danger-indicator {
-  color: $fintech-red;
+body.dark .hljs-keyword,
+body.dark .hljs-type {
+  color: $scheme-lavender;
+}
+
+body.dark .hljs-function,
+body.dark .hljs-title {
+  color: $scheme-cyan;
 }
 
 // Video and gallery section styling
@@ -358,6 +364,12 @@ body.dark .gallery-card {
 
 body.dark .video-card:hover,
 body.dark .gallery-card:hover {
-  border-color: $fintech-blue;
-  box-shadow: 0 0 30px rgba($fintech-blue, 0.2);
+  border-color: $scheme-purple;
+  box-shadow: 0 0 30px rgba($scheme-purple, 0.2);
 }
+
+// KaTeX formula styling
+body.dark .katex {
+  color: $scheme-lavender;
+}
+

@@ -1,6 +1,6 @@
 +++
-title = "Live Coding: Building a Trading System"
-description = "End-to-end implementation of a categorical trading system with live market data."
+title = "Advanced: History, Future & Beyond"
+description = "Deep dive into histomorphism, futumorphism, and the exotic scheme zoo."
 date = 2024-02-15T10:00:00+00:00
 draft = false
 weight = 30
@@ -8,71 +8,101 @@ template = "videos/page.html"
 
 [extra]
 youtube_id = "dQw4w9WgXcQ"
-duration = "1h 30min"
+duration = "75 min"
 level = "Advanced"
-chapter = 12
-katex_thumbnail = "\\alpha_t = \\mathcal{S}(\\mathcal{F}(X_t))"
+chapter = 4
+katex_thumbnail = "\\text{histo} : F\\,(\\text{Cofree } F\\, a) \\to a"
 resources = [
-  { title = "Complete Source Code", url = "https://github.com/example/trading-system", type = "Code" },
-  { title = "Architecture Diagram", url = "/resources/diagrams/trading-system.pdf", type = "PDF" },
-  { title = "Deployment Guide", url = "/resources/guides/deployment.pdf", type = "PDF" }
+  { title = "Lecture Slides", url = "/resources/slides/advanced-schemes.pdf", type = "PDF" },
+  { title = "Complete Examples", url = "https://github.com/example/recursion-schemes/advanced.hs", type = "Code" },
+  { title = "Cofree/Free Tutorial", url = "/resources/guides/cofree-free.pdf", type = "PDF" }
 ]
 +++
 
 ## Video Overview
 
-In this extended live coding session, we build a complete categorical trading system from scratch. We connect to live market data, implement our strategy functors, and deploy a real-time trading pipeline.
+This advanced video explores the "time-traveling" schemes: histomorphism (access past computations), futumorphism (generate multiple future layers), and their combination chronomorphism. We also tour the exotic scheme zoo.
 
-## What We'll Build
+## Topics Covered
 
-### Data Pipeline
-- WebSocket connection to market data
-- Real-time feature computation
-- Time series management with proper handling of look-ahead bias
+### The Cofree Comonad
+- Structure: $a \times F\,(\text{Cofree } F\, a)$
+- Current value + history
+- Comonadic operations: `extract`, `extend`
 
-### Strategy Layer
-- Momentum functor implementation
-- Mean reversion functor
-- Strategy composition and ensemble
+### Histomorphism: Fold with Memory
+- Access all previously computed values
+- Implementing Fibonacci efficiently
+- Dynamic programming as histomorphism
 
-### Execution Layer
-- Order management system
-- Risk checks as natural transformations
-- Position tracking and P&L calculation
+### The Free Monad
+- Structure: $A + F\,(\text{Free } F\, A)$
+- Seeds or pre-built layers
+- Monadic operations: `return`, `>>=`
 
-### Monitoring
-- Real-time metrics dashboard
-- Alert system for anomalies
-- Performance attribution
+### Futumorphism: Unfold with Lookahead
+- Generate multiple layers at once
+- Exchange sort example
+- Run-length decoding
 
-## System Architecture
+### Chronomorphism: Time Travel
+- Combining history and future
+- The ultimate "hyper-scheme"
+- When to use (and when not to)
+
+## Live Coding: Fibonacci Three Ways
+
+```haskell
+-- 1. Naive recursion: O(2^n)
+fibNaive :: Int -> Int
+fibNaive 0 = 0
+fibNaive 1 = 1
+fibNaive n = fibNaive (n-1) + fibNaive (n-2)
+
+-- 2. Histomorphism: O(n) with automatic memoization
+fibHisto :: Natural -> Natural
+fibHisto = histo $ \case
+  Nothing                       -> 0
+  Just (_ :< Nothing)           -> 1
+  Just (f1 :< Just (f2 :< _))   -> f1 + f2
+
+-- 3. Dynamorphism: O(n) with generation + history
+fibDyna :: Int -> Int
+fibDyna = dyna fibAlg fibCoalg
+```
+
+## The Scheme Hierarchy
 
 ```
-Market Data → [Feature Functor] → [Strategy Functor] → [Risk Transform] → Orders
-     ↑                                                         |
-     └─────────────── [Feedback Functor] ←─────────────────────┘
+                    Chronomorphism
+                    /            \
+           Histomorphism      Futumorphism
+                |                  |
+           Paramorphism       Apomorphism
+                |                  |
+           Catamorphism       Anamorphism
+                \                 /
+                   Hylomorphism
 ```
 
-## Key Design Decisions
+## Key Takeaways
 
-1. **Immutable data structures** - Thread-safe, easier to reason about
-2. **Pure strategy functions** - Deterministic, testable, composable
-3. **Explicit state management** - No hidden side effects
-4. **Typed interfaces** - Catch errors at compile time
-
-## Warning
-
-This is an educational demonstration. Real trading systems require:
-- Extensive testing and validation
-- Proper risk management
-- Regulatory compliance
-- Professional infrastructure
-
-Never trade real money with untested code!
+1. **Cofree = history** - The comonad that remembers everything
+2. **Free = future** - The monad that delays computation
+3. **Power vs complexity** - More powerful schemes have higher cognitive overhead
+4. **Choose wisely** - Often simpler schemes suffice
 
 ## Prerequisites
 
-- Completion of all previous videos
-- Python proficiency
-- Understanding of async programming
-- Chapters 10-12 of the handbook
+- Solid understanding of cata, ana, hylo
+- Comfort with paramorphism and apomorphism
+- Familiarity with comonads and monads helps
+
+## The Zoo Awaits
+
+After mastering the core schemes, explore:
+- Zygomorphism (dependent folds)
+- Mutumorphism (mutual recursion)
+- Elgot algebras (early termination)
+- Mendler-style (avoiding Functor constraint)
+

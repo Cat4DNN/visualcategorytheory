@@ -1,6 +1,6 @@
 +++
 title = "Resources"
-description = "Downloadable materials, code repositories, and supplementary resources for the Handbook of Computational Finance."
+description = "Code examples, recommended reading, and supplementary resources for learning recursion schemes."
 template = "resources/section.html"
 +++
 
@@ -8,18 +8,18 @@ template = "resources/section.html"
 <div class="col-md-6">
 <div class="card h-100">
 <div class="card-body">
-<h3 class="card-title">Code Repository</h3>
-<p class="card-text">All code examples from the book, organized by chapter. Includes Jupyter notebooks, Python modules, and Haskell implementations.</p>
-<a href="https://github.com/sergeyoumbi/compfinance-book-code" class="btn btn-primary">View on GitHub</a>
+<h3 class="card-title">Code Examples</h3>
+<p class="card-text">All Haskell code examples from this compendium, organized by scheme. Clone and experiment locally!</p>
+<a href="https://github.com/cat4dnn" class="btn btn-primary">View on GitHub</a>
 </div>
 </div>
 </div>
 <div class="col-md-6">
 <div class="card h-100">
 <div class="card-body">
-<h3 class="card-title">Exercise Solutions</h3>
-<p class="card-text">Detailed solutions to all exercises. Available to verified instructors and students upon request.</p>
-<a href="#solutions" class="btn btn-outline-primary">Request Access</a>
+<h3 class="card-title">recursion-schemes Library</h3>
+<p class="card-text">Edward Kmett's Haskell library implementing all the schemes covered in this compendium.</p>
+<a href="https://hackage.haskell.org/package/recursion-schemes" class="btn btn-outline-primary">View on Hackage</a>
 </div>
 </div>
 </div>
@@ -27,60 +27,7 @@ template = "resources/section.html"
 
 ---
 
-## Downloadable Materials
-
-### Lecture Slides
-
-Presentation slides suitable for classroom use:
-
-| Chapter | Topic | Format | Download |
-|---------|-------|--------|----------|
-| 1-2 | Mathematical Foundations | PDF | [Download](#) |
-| 3-4 | Category Theory for Finance | PDF | [Download](#) |
-| 5-6 | Stochastic Calculus | PDF | [Download](#) |
-| 7-8 | Trading Strategies | PDF | [Download](#) |
-| 9-10 | Machine Learning | PDF | [Download](#) |
-| 11-12 | Risk Management | PDF | [Download](#) |
-
-### Data Sets
-
-Sample datasets for practicing the techniques in the book:
-
-<div class="table-responsive">
-
-| Dataset | Description | Size | Format |
-|---------|-------------|------|--------|
-| S&P 500 Historical | Daily OHLCV data 2000-2023 | 45 MB | CSV/Parquet |
-| Options Chain | Sample options data with Greeks | 120 MB | Parquet |
-| Order Book | L2 market data sample | 500 MB | HDF5 |
-| Synthetic Series | Generated test cases | 10 MB | CSV |
-
-</div>
-
-<div class="alert alert-warning">
-<strong>Data Usage:</strong> These datasets are for educational purposes only. Do not use for live trading decisions.
-</div>
-
----
-
-## Software Requirements
-
-### Python Environment
-
-```bash
-# Create conda environment
-conda create -n compfinance python=3.11
-conda activate compfinance
-
-# Install core dependencies
-pip install numpy pandas scipy matplotlib
-pip install torch pytorch-lightning
-pip install statsmodels arch
-pip install jupyter jupyterlab
-
-# Install book-specific package
-pip install compfinance-book
-```
+## Getting Started
 
 ### Haskell Setup
 
@@ -88,83 +35,149 @@ pip install compfinance-book
 # Using GHCup (recommended)
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 
-# Install dependencies
+# Install recursion-schemes
 cabal update
-cabal install --lib mtl transformers containers
+cabal install --lib recursion-schemes
 ```
 
-### Docker Option
+### Quick Test
 
-For a fully configured environment:
+```haskell
+-- Test.hs
+{-# LANGUAGE DeriveFunctor, TemplateHaskell #-}
+
+import Data.Functor.Foldable
+import Data.Functor.Foldable.TH
+
+data Expr = Lit Int | Add Expr Expr deriving Show
+
+makeBaseFunctor ''Expr
+
+eval :: Expr -> Int
+eval = cata $ \case
+  LitF n   -> n
+  AddF x y -> x + y
+
+main = print $ eval (Add (Lit 1) (Add (Lit 2) (Lit 3)))  -- 6
+```
 
 ```bash
-docker pull sergeyoumbi/compfinance-book:latest
-docker run -p 8888:8888 sergeyoumbi/compfinance-book
+runhaskell Test.hs
 ```
 
 ---
 
-## External Resources
+## Essential Reading
 
-### Recommended Reading
+### Papers
+
+| Paper | Authors | Topic |
+|-------|---------|-------|
+| [Functional Programming with Bananas, Lenses, Envelopes and Barbed Wire](https://maartenfokkinga.github.io/utwente/mmf91m.pdf) | Meijer et al. | The foundational paper |
+| [Recursion Schemes for Higher Algebras](https://www.cs.ox.ac.uk/ralf.hinze/publications/WGP13.pdf) | Hinze et al. | Advanced extensions |
+| [Recursion Schemes from Comonads](https://www.ioc.ee/~tarmo/papers/cmcs08.pdf) | Uustalu et al. | Comonadic perspective |
+
+### Books
+
+**Functional Programming:**
+- *Thinking with Types* - Sandy Maguire
+- *Parallel and Concurrent Programming in Haskell* - Simon Marlow
+- *Haskell in Depth* - Vitaly Bragilevsky
 
 **Category Theory:**
-- *Category Theory for Programmers* - Bartosz Milewski
-- *Seven Sketches in Compositionality* - Brendan Fong & David Spivak
+- *Category Theory for Programmers* - Bartosz Milewski (free online!)
+- *Seven Sketches in Compositionality* - Fong & Spivak
+- *An Invitation to Applied Category Theory* - Fong & Spivak
 
-**Mathematical Finance:**
-- *Stochastic Calculus for Finance II* - Steven Shreve
-- *Options, Futures, and Other Derivatives* - John Hull
+### Blog Posts & Tutorials
 
-**Machine Learning:**
-- *Deep Learning* - Goodfellow, Bengio, Courville
-- *Reinforcement Learning: An Introduction* - Sutton & Barto
+- [Introduction to Recursion Schemes](https://blog.sumtypeofway.com/posts/introduction-to-recursion-schemes.html) - Patrick Thomson
+- [Practical Recursion Schemes](https://jtobin.io/practical-recursion-schemes) - Jared Tobin
+- [Recursion Schemes, Part 1](https://www.schoolofhaskell.com/user/bartosz/understanding-algebras) - Bartosz Milewski
 
-### Online Courses
+---
 
-- [MIT 18.S096: Topics in Mathematics with Applications in Finance](https://ocw.mit.edu)
-- [Stanford CS229: Machine Learning](https://cs229.stanford.edu)
-- [Category Theory for Scientists (MIT)](https://ocw.mit.edu)
+## Video Resources
 
-### Research Papers
+### Conference Talks
 
-Key papers referenced in the book:
+- **"Recursion Schemes"** - Tim Williams (Lambda Conf)
+- **"F-Algebras"** - Bartosz Milewski (YouTube)
+- **"Practical Recursion Schemes"** - various Haskell meetups
 
-1. **"Deep Hedging"** - Buehler et al. (2019)
-2. **"Categorical Probability Theory"** - Fritz (2020)
-3. **"Neural SDEs"** - Tzen & Raginsky (2019)
-4. **"Coherent Risk Measures"** - Artzner et al. (1999)
+### YouTube Channels
+
+- [Bartosz Milewski](https://www.youtube.com/@DrBartosz) - Category theory lectures
+- [Haskell at Work](https://www.youtube.com/@haborertimwerk) - Practical Haskell
+
+---
+
+## Libraries & Tools
+
+### Haskell
+
+| Library | Purpose |
+|---------|---------|
+| [recursion-schemes](https://hackage.haskell.org/package/recursion-schemes) | The canonical implementation |
+| [compdata](https://hackage.haskell.org/package/compdata) | Compositional data types |
+| [free](https://hackage.haskell.org/package/free) | Free monads |
+| [comonad](https://hackage.haskell.org/package/comonad) | Comonadic structures |
+
+### Other Languages
+
+| Language | Library |
+|----------|---------|
+| Scala | [droste](https://github.com/higherkindness/droste), [matryoshka](https://github.com/precog/matryoshka) |
+| PureScript | [purescript-matryoshka](https://pursuit.purescript.org/packages/purescript-matryoshka) |
+| TypeScript | [fp-ts-recursion-schemes](https://github.com/gcanti/fp-ts-recursion-schemes) |
+
+---
+
+## Cheat Sheet
+
+### Scheme Quick Reference
+
+| Scheme | Type | Use Case |
+|--------|------|----------|
+| cata | `(F a → a) → μF → a` | Fold structure |
+| ana | `(a → F a) → a → νF` | Generate structure |
+| hylo | `(F b → b) → (a → F a) → a → b` | Transform via intermediate |
+| para | `(F (μF, a) → a) → μF → a` | Fold with original |
+| apo | `(a → F (νF + a)) → a → νF` | Generate with shortcuts |
+| histo | `(F (Cofree F a) → a) → μF → a` | Fold with history |
+| futu | `(a → F (Free F a)) → a → νF` | Generate multiple layers |
+
+### Pattern Functor Naming
+
+```haskell
+-- Data type    → Pattern functor
+List a          → ListF a r = NilF | ConsF a r
+Tree a          → TreeF a r = LeafF a | NodeF r r
+Expr            → ExprF r   = LitF Int | AddF r r
+```
 
 ---
 
 ## Community
 
-### Discussion Forum
+### Discussion & Help
 
-Join the community discussion:
+- [Haskell Discord](https://discord.gg/haskell) - #beginners and #advanced channels
+- [r/haskell](https://reddit.com/r/haskell) - Reddit community
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/recursion-schemes) - Q&A
 
-- **Discord**: [Join Server](#)
-- **GitHub Discussions**: [View Discussions](https://github.com/sergeyoumbi/compfinance-book-code/discussions)
+### Contributing
 
-### Errata
+Found an error or want to contribute? This compendium is open to improvements!
 
-Found an error in the book? Report it here:
-
-- [Submit Errata](https://github.com/sergeyoumbi/compfinance-book-code/issues/new?labels=errata)
-
-Current errata: [View List](https://github.com/sergeyoumbi/compfinance-book-code/wiki/Errata)
+- [Report an Issue](https://github.com/cat4dnn/recursion-schemes/issues)
+- [Suggest Content](https://github.com/cat4dnn/recursion-schemes/discussions)
 
 ---
 
 <div class="text-center mt-5">
-<h3>Stay Updated</h3>
-<p>Subscribe to receive updates about new chapters, code releases, and errata.</p>
-<form class="row g-3 justify-content-center">
-<div class="col-auto">
-<input type="email" class="form-control" placeholder="your@email.com">
+<h3>Ready to Learn?</h3>
+<p>Start with the foundations and work your way up!</p>
+<a href="/schemes/foundations/introduction/" class="btn btn-primary btn-lg">Begin Learning</a>
 </div>
-<div class="col-auto">
-<button type="submit" class="btn btn-primary">Subscribe</button>
-</div>
-</form>
-</div>
+
